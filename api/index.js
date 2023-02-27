@@ -1,9 +1,6 @@
 const express=require('express');
 const apiRouter=express.Router()
 require ('dotenv').config();
-
-// set 'req.user' if possible
-// USE /api/
    
 apiRouter.use('/',async(req,res,next)=>{
     console.log("api routers up");
@@ -11,8 +8,8 @@ apiRouter.use('/',async(req,res,next)=>{
 });
 
 
-const boardRouter = require('./boards')
-apiRouter.use('/boards',boardRouter)
+const puzzleRouter = require('./puzzle')
+apiRouter.use('/puzzle',puzzleRouter)
 
 // Error handling
 apiRouter.use((error, req, res, next) => {

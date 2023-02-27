@@ -8,8 +8,8 @@ async function generateNewPuzzle(){
     let answeredPuzzle = sudGenerator()
     const emptyPuzzle = JSON.stringify(sudPuzAlgo(answeredPuzzle))
     answeredPuzzle = JSON.stringify(answeredPuzzle)
-    console.log("answeredPuzzle, " , answeredPuzzle, emptyPuzzle)
-
+    console.log("answeredPuzzle, " , answeredPuzzle)
+    console.log("before", answeredPuzzle)
     try{
         const{ rows: [ puzzle ]} = await client.query(`
         INSERT INTO puzzles (emptypuzzle, answeredpuzzle,puzzletype)
@@ -26,11 +26,11 @@ async function generateNewPuzzle(){
 
 async function getPuzzleById(id){
     try{
+        
         const{ rows: [puzzle] } = await client.query(`
         SELECT * FROM puzzles
         WHERE id = $1
         `, [id])
-        
         //need to ask matt about this one.
         // console.log(puzzle)
         // let puzzleSolution = JSON.parse(JSON.parse(puzzle.answeredPuzzle))

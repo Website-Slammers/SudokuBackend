@@ -33,7 +33,7 @@ async function dropTables(){
 async function createInitialPuzzles(){
     try{
         console.log("creating sudoku boards")
-        for(let i=0; i<200; i++){
+        for(let i=0; i<357; i++){
             await generateNewPuzzle();
         }
         console.log("sudoku boards created")

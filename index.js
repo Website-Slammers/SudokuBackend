@@ -1,5 +1,5 @@
 const express = require ('express')
-const morgan=require ('morgan');
+const morgan = require ('morgan');
 const cors = require("cors")
 const app= express();
 const corsOptions = {allowedHeaders: ["Content-Type","Authorization"]}

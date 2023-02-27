@@ -4,11 +4,12 @@ const puzzleRouter = express.Router()
 
 
 // GET /api/puzzle
-puzzleRouter.get('/',async(req,res,next)=>{
-    const {id} = req.body;
+puzzleRouter.get('/:id',async(req,res,next)=>{
+    const {id} = req.params;
     try{
+        console.log("wtf?")
         const puzzle = await getPuzzleById(id)
-        res.send({puzzle})
+        res.send(puzzle)
     }catch({name, message}){
         next({name, message})
     }

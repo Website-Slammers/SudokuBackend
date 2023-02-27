@@ -9,7 +9,8 @@ async function createTables(){
         CREATE TABLE puzzles(
             id SERIAL PRIMARY KEY,
             emptypuzzle VARCHAR(2000) NOT NULL, 
-            answeredpuzzle VARCHAR(2000) UNIQUE NOT NULL
+            answeredpuzzle VARCHAR(2000) UNIQUE NOT NULL,
+            puzzletype VARCHAR(20)
         )`)
         console.log("tables successfully created!")
     }catch(error){
